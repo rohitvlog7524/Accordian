@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordian</title>
+    <style>
+     
+  .accordion {
+  color:black;
+  background-color: rgb(221, 137, 137);
+  font-size: large;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin-top:20px;
+  width: 100%;
+  border: 1px solid black;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #00000042;
+  border: 1px solid lightpink;
+}
+
+.panel {
+  padding: 0 18px;
+  font-size: 21px;
+  background-color: lightcyan;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.header{
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+     <div class="header">
+        <h1>FAQS</h1>
+     </div>
+    <button class="accordion"><span class="faq__question-heading">What is JavaScript</span>
+        <svg width="3500" height="10" viewbox=" 0 0 42 25">
+            <path
+                d="M3 3L21 21L39 3"
+                stroke="black"
+                stroke-width="7"
+                stroke-linecap="round"/>
+        </svg></button>
+<div class="panel">
+
+  <p style="padding:18px 0;">JavaScript (JS) is a cross-platform, object-oriented programming language used by developers to make web pages interactive. It allows developers to create dynamically updating content, use animations, pop-up menus, clickable buttons, control multimedia, etc.</p>
+</div>
+
+<button class="accordion"><span class="faq__question-heading">What is an HTML explain?  </span>
+    <svg width="3500" height="10" viewbox=" 0 0 42 25">
+        <path
+            d="M3 3L21 21L39 3"
+            stroke="black"
+            stroke-width="7"
+            stroke-linecap="round"/>
+    </svg></button></button>
+<div class="panel">
+  <p style="padding:18px 0;">HTML stands for Hyper Text Markup Language. HTML is the standard markup language for creating Web pages. HTML describes the structure of a Web page. HTML consists of a series of elements.</p>
+</div>
+
+<button class="accordion"><span class="faq__question-heading">What is CSS and explain it?</span>
+    <svg width="3500" height="10" viewbox=" 0 0 42 25">
+        <path
+            d="M3 3L21 21L39 3"
+            stroke="black"
+            stroke-width="7"
+            stroke-linecap="round"/>
+    </svg></button></button>
+<div class="panel">
+  <p style="padding:18px 0;">CSS stands for Cascading Style Sheets. CSS describes how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work. It can control the layout of multiple web pages all at once. </p>
+</div>
+
+<button class="accordion"><span class="faq__question-heading">What is Bootstrap ?</span>
+    <svg width="3500" height="10" viewbox=" 0 0 42 25">
+        <path
+            d="M3 3L21 21L39 3"
+            stroke="black"
+            stroke-width="7"
+            stroke-linecap="round"/>
+    </svg></button></button>
+<div class="panel">
+  <p style="padding:18px 0;">Bootstrap is a free, open source front-end development framework for the creation of websites and web apps. Designed to enable responsive development of mobile-first websites, Bootstrap provides a collection of syntax for template designs. </p>
+</div>
+
+    
+</body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    for (let j = 0; j < acc.length; j++) {
+    acc[j].classList.remove("active");
+      if(j!=i){
+        acc[j].nextElementSibling.style.maxHeight = null;
+      }
+    }
+    this.classList.add("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+</script>
+</html>
